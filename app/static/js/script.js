@@ -149,6 +149,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
             showAlert('success', 'Conversion successful! Download started.');
 
+            // Clear selected files after successful conversion
+            selectedFiles = [];
+            fileInput.value = ""; // Reset file input
+            updateUI();
+
         } catch (error) {
             console.error(error);
             showAlert('danger', `Error: ${error.message}`);
